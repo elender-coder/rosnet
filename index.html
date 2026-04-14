@@ -1,5 +1,6 @@
 <html lang="es">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="televisa.jpg">
   <link rel="stylesheet" href="bootstrap-diego/css/bootstrap.min.css">
   <title>televisa</title>
@@ -15,7 +16,7 @@
     /* HEADER */
     .header{
       text-align:center;
-      padding:20px;
+      padding:18px;
       background:black;
       color:pink;
       position:relative;
@@ -25,11 +26,11 @@
     /* BOTÓN MENÚ */
     .menu-btn{
       position:absolute;
-      left:15px;
-      top:15px;
+      left:12px;
+      top:12px;
       background:pink;
       border:none;
-      padding:10px 15px;
+      padding:10px 14px;
       font-size:20px;
       cursor:pointer;
       border-radius:5px;
@@ -73,17 +74,16 @@
       color:white;
       border:none;
       padding:5px 10px;
-      cursor:pointer;
       border-radius:5px;
     }
 
     /* OVERLAY */
     .overlay{
       position:fixed;
-      width:100%;
-      height:100%;
       top:0;
       left:0;
+      width:100%;
+      height:100%;
       background:rgba(0,0,0,0.5);
       display:none;
       z-index:900;
@@ -95,25 +95,25 @@
 
     /* CONTENIDO */
     .container{
-      padding:40px;
+      padding:20px;
       display:flex;
       justify-content:center;
-      gap:30px;
+      gap:20px;
       flex-wrap:wrap;
     }
 
-    /* TARJETAS */
+    /* TARJETAS RESPONSIVE REAL */
     .product{
       background:white;
-      width:250px;
-      padding:20px;
+      width:100%;
+      max-width:260px;
+      padding:15px;
       border-radius:10px;
       text-align:center;
       box-shadow:0 4px 10px rgba(0,0,0,0.2);
       transition:transform 0.2s;
     }
 
-    /* 🔥 EFECTO INTERACTIVO IMÁGENES */
     .product img{
       width:100%;
       border-radius:10px;
@@ -121,45 +121,48 @@
       cursor:pointer;
     }
 
+    /* 🔥 EFECTO CLICK */
     .product img:active{
-      transform:scale(1.08);
+      transform:scale(1.06);
     }
 
     .product:hover{
-      transform:scale(1.03);
+      transform:scale(1.02);
     }
 
     button{
       background:black;
       color:white;
       border:none;
-      padding:10px 20px;
+      padding:10px 18px;
       border-radius:5px;
       cursor:pointer;
     }
 
-    /* 📱 RESPONSIVE REAL */
+    /* 📱 MOBILE FIX REAL */
     @media (max-width:768px){
+
+      .header{
+        font-size:18px;
+        padding:15px;
+      }
+
+      .menu-btn{
+        top:10px;
+        left:10px;
+        padding:9px 12px;
+        font-size:18px;
+      }
 
       .container{
         flex-direction:column;
         align-items:center;
-        padding:20px;
-        gap:20px;
+        padding:15px;
       }
 
       .product{
-        width:90%;
+        width:95%;
         max-width:320px;
-      }
-
-      .menu-btn{
-        left:10px;
-        top:10px;
-      }
-
-      .header{
-        font-size:18px;
       }
     }
 
@@ -172,9 +175,9 @@
 <div class="sidebar" id="sidebar">
   <button class="close-btn" onclick="toggleMenu()">✖</button>
   <h3 style="text-align:center;color:pink;">Televisa</h3>
-  <a href="#">Menú</a>
-  <a href="#">Programas</a>
-  <a href="#">Noticias</a>
+  <a href="index.html">Menú</a>
+  <a href="programas.html">Programas</a>
+  <a href="noticias.html">Noticias</a>
 </div>
 
 <!-- OVERLAY -->
@@ -192,18 +195,18 @@
   <div class="product">
     <img src="televisa.jpg">
     <h3>episodio 1</h3>
-    <a href="episodio 1.html"><button>Entrar</button></a>
+    <a href="episodio 1.html"><button>ver</button></a>
   </div>
 
   <div class="product">
     <img src="televisa.jpg">
     <h3>episodio 2</h3>
-    <a href="on2.html"><button>Comprar</button></a>
+    <a href="episodio 2.html"><button>ver</button></a>
   </div>
 
   <div class="product">
-    <img src="on.png">
-    <h3>sudaderas</h3>
+    <img src="televisa.jpg">
+    <h3>.</h3>
     <a href="on sudaderas3.html"><button>Comprar</button></a>
   </div>
 
