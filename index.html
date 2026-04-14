@@ -1,21 +1,33 @@
 <html lang="es">
 <head>
-  <link rel="icon" href=televisa.jpg>
+  <link rel="icon" href="televisa.jpg">
   <link rel="stylesheet" href="bootstrap-diego/css/bootstrap.min.css">
-  <title>televisa </title>
+  <title>televisa</title>
 
   <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:black;
+      overflow-x:hidden;
+    }
+
+    /* MENÚ */
     .sidebar{
       position:fixed;
-      left:-200px; /* oculto */
+      left:-220px;
       top:0;
-      width:180px;
+      width:200px;
       height:100%;
       background:#111;
-      padding-top:80px;
+      padding-top:60px;
       color:white;
       transition:0.3s;
       z-index:1000;
+    }
+
+    .sidebar.active{
+      left:0;
     }
 
     .sidebar a{
@@ -23,7 +35,6 @@
       color:white;
       text-decoration:none;
       padding:15px;
-      font-family:Arial;
     }
 
     .sidebar a:hover{
@@ -31,76 +42,129 @@
       color:black;
     }
 
-    .sidebar.active{
-      left:0; /* se abre */
-    }
-
-    .header{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:15px;
-      background:black;
-      padding:20px;
-    }
-
+    /* BOTÓN ABRIR */
     .menu-btn{
       position:absolute;
-      left:20px;
+      left:15px;
+      top:15px;
       background:pink;
       border:none;
       padding:10px 15px;
       font-size:20px;
       cursor:pointer;
       border-radius:5px;
+      z-index:1100;
     }
 
-    .content{
-      transition:0.3s;
+    /* BOTÓN CERRAR */
+    .close-btn{
+      position:absolute;
+      top:10px;
+      right:10px;
+      background:red;
+      color:white;
+      border:none;
+      font-size:18px;
+      padding:5px 10px;
+      cursor:pointer;
+      border-radius:5px;
     }
+
+    /* HEADER */
+    .header{
+      text-align:center;
+      padding:20px;
+      background:black;
+      color:pink;
+      position:relative;
+    }
+
+    /* FONDO OSCURO (cuando menú abre) */
+    .overlay{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.5);
+      display:none;
+      z-index:900;
+    }
+
+    .overlay.active{
+      display:block;
+    }
+
+    /* CONTENIDO */
+    .container{
+      padding:40px;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    /* RESPONSIVE MÓVIL */
+    @media(max-width:768px){
+      .container{
+        flex-direction:column;
+        align-items:center;
+        padding:20px;
+      }
+
+      .menu-btn{
+        left:10px;
+        top:10px;
+      }
+    }
+
   </style>
 </head>
 
-<body style="margin:0;font-family:Arial;background:black;">
+<body>
 
-<!-- MENÚ LATERAL -->
+<!-- MENÚ -->
 <div class="sidebar" id="sidebar">
+  <button class="close-btn" onclick="toggleMenu()">✖</button>
   <h3 style="text-align:center;color:pink;">Televisa</h3>
   <a href="#">Menú</a>
   <a href="#">Programas</a>
   <a href="#">Noticias</a>
 </div>
 
-<!-- HEADER CON BOTÓN -->
+<!-- FONDO OSCURO -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- HEADER -->
 <div class="header">
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <h1 style="color:pink;margin:0;">Televisa</h1>
+  Televisa
 </div>
 
 <!-- CONTENIDO -->
-<section class="container" style="padding:40px;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
+<section class="container">
 
-  <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <img src="televisa.jpg"style="width:100%;">
+  <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;">
+    <img src="televisa.jpg" style="width:100%;">
     <h3>episodio 1</h3>
     <a href="episodio 1.html">
-      <button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">entrar</button>
+      <button>entrar</button>
     </a>
   </div>
 
-  <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <img src="televisa.jpg"style="width:100%">
+  <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;">
+    <img src="televisa.jpg" style="width:100%">
     <h3>episodio 2</h3>
     <a href="on2.html">
-      <button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">Comprar</button>
+      <button>Comprar</button>
     </a>
   </div>
 
-  <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <img src="on.png"style="width:100%">
+  <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;">
+    <img src="on.png" style="width:100%">
     <h3>sudaderas</h3>
     <a href="on sudaderas3.html">
-      <button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">Comprar</button>
+      <button>Comprar</button>
     </a>
   </div>
 
@@ -110,10 +174,10 @@
   <p>© Televisa</p>
 </footer>
 
-<!-- JS DEL MENÚ -->
 <script>
   function toggleMenu(){
     document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
   }
 </script>
 
