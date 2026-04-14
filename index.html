@@ -1,38 +1,87 @@
 <html lang="es">
 <head>
   <link rel="icon" href=televisa.jpg>
- <link rel="stylesheet" href="bootstrap-diego/css/bootstrap.min.css">
-<title>televisa </title>
- </head>
- <body style="margin:0;font-family:Arial;background:black;">
+  <link rel="stylesheet" href="bootstrap-diego/css/bootstrap.min.css">
+  <title>televisa </title>
+
+  <!-- MENÚ LATERAL (AGREGADO) -->
+  <style>
+    .sidebar{
+      position:fixed;
+      left:0;
+      top:0;
+      width:180px;
+      height:100%;
+      background:#111;
+      padding-top:80px;
+      color:white;
+    }
+
+    .sidebar a{
+      display:block;
+      color:white;
+      text-decoration:none;
+      padding:15px;
+      font-family:Arial;
+    }
+
+    .sidebar a:hover{
+      background:pink;
+      color:black;
+    }
+
+    .content{
+      margin-left:190px;
+    }
+  </style>
+</head>
+
+<body style="margin:0;font-family:Arial;background:black;">
+
+<!-- MENÚ IZQUIERDO (AGREGADO) -->
+<div class="sidebar">
+  <h3 style="text-align:center;color:pink;">Televisa</h3>
+  <a href="#">Menú</a>
+  <a href="#">Programas</a>
+  <a href="#">Noticias</a>
+</div>
+
+<!-- TU CONTENIDO ORIGINAL (SOLO ENVUELTO) -->
+<div class="content">
+
   <h1 style="background:black;color:pink;padding:20px;text-align:center;">Televisa</h1>
-  
+
   <section class="container" style="padding:40px;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
-<div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-<img src="televisa.jpg"style="width:100%;">
-<h3>episodio 1</h3>
-<a href="episodio 1.html">
-<button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;" >entrar</button>
-</a>
+    <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="televisa.jpg"style="width:100%;">
+      <h3>episodio 1</h3>
+      <a href="episodio 1.html">
+        <button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;" >entrar</button>
+      </a>
+    </div>
+
+    <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="televisa.jpg"style="width:100%">
+      <h3>episodio 2</h3>
+      <a href="on2.html">
+        <button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">Comprar</button>
+      </a>
+    </div>
+
+    <div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="on.png"style="width:100%">
+      <h3>sudaderas</h3>
+      <a href="on sudaderas3.html">
+        <button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">Comprar</button>
+      </a>
+    </div>
+  </section>
+
+  <footer style="background:black;color:white;text-align:center;padding:15px;">
+    <p>© Televisa</p>
+  </footer>
+
 </div>
-<div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-<img src="televisa.jpg"style="width:100%">
-<h3>episodio 2</h3>
-<a href="on2.html">
-<button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">Comprar</button>
-</a>
-</div>
-<div class="product" style="background:white;width:250px;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-<img src="on.png"style="width:100%">
-<h3>sudaderas</h3>
-<A href="on sudaderas3.html">
-<button style="background:black;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;">Comprar</button>
-</a>
-</div>
-</section>
-<footer style="background:black;color:white;text-align:center;padding:15px;">
-<p>© Televisa</p>
-</footer>
 
 </body>
 </html>
